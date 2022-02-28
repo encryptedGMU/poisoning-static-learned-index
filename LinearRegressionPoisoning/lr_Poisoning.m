@@ -3,7 +3,8 @@
 % It inserts 15 percent of poisoning datapoints and record the effect 
 % of MSE and LAD error for each percent inserted. 
 % The results are recorded into output arrays.
-function [out, out_lad, out_lad_max, out_lad_var] = lr_Poisoning(distribution, data_size, density, percentage)
+function [out, out_lad, out_lad_max, out_lad_var] = ...
+    lr_Poisoning(distribution, data_size, density, percentage)
 
 % metadata
 % the range of dataset

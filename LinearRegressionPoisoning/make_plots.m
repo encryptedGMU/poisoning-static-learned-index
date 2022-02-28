@@ -1,8 +1,9 @@
-
-function make_plots()
-% dimension 3: density 5 10 50 80
-% dimension 2: num_points 100 500 1000 5000
+% Specialized function for plotting
+function make_plots(data_size_pool, density_pool, out_arr, out_arr_lad, ...
+    out_arr_lad_max, out_arr_lad_var)
 % dimension 1: iteration 1-20
+% dimension 2: num_points 100 500 1000 5000
+% dimension 3: density 5 10 50 80
 % dimension 4: mse instances (17, 81, 161, 801)
 figure(1);
 lims = [1, 15; 1, 50; 1, 100; 1, 500];
@@ -64,7 +65,6 @@ for j = 1:4
         ax.YAxis.MinorTickValues = y_minor_ticks(j, :);
         grid on;
     end
-    %ylim(lims(j, :))
 end
 
 figure(3);
@@ -95,14 +95,9 @@ for j = 1:4
         ax.YAxis.MinorTickValues = y_minor_ticks(j, :);
         grid on;
     end
-    %ylim(lims(j, :))
 end
 
 figure(4);
-lims = [1, 5; 1, 10; 1, 15; 1, 30];
-% ticks for graphs
-y_ticks = [0:0.5:5;0:1:10;0:1.5:15;0:3:30];
-y_minor_ticks = [0:0.05:5;0:0.1:10;0:0.15:15;0:0.3:30];
 % align the graphs
 x_in_pos = [0.1300, 0.3361, 0.5422, 0.7483];
 y_in_pos = [0.7673, 0.5482, 0.3291, 0.1100];
@@ -119,14 +114,9 @@ for j = 1:4
         xlabel('Poisoning Percentage', 'FontSize', 16);
         ylabel("Variance of Memory Offset", 'FontSize', 15);
         title("Keys: " + data_size_pool(j) +" Domain:" + data_size_pool(j)/density_pool(k), 'FontSize', 15);
-        %ylim(lims(j, :));
-        %xticks(1:16);
-        %yticks(y_ticks(j, :));
         ax.YAxis.MinorTick = 'on';
-        %ax.YAxis.MinorTickValues = y_minor_ticks(j, :);
         grid on;
     end
-    %ylim(lims(j, :))
 end
 
 

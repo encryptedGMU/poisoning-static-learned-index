@@ -19,4 +19,4 @@ distribution = 1;
 
 % plotting function specialized for formatting the figure appeared in
 % the paper.
-make_plots();
+make_plots(data_size_pool, density_pool, out_arr, out_arr_lad, out_arr_lad_max, out_arr_lad_var);
